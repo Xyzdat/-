@@ -1,0 +1,36 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #faf;
+    color: #fff;
+}
+
+.content{
+    margin-top: 100px;
+}
+
+input, textarea{
+    color: #fff;
+    border: none;
+    width: 90%;
+    height: 40px;
+    border-radius: 100px;
+    padding-left: 10px;
+    background-color: #333;
+    margin-bottom: 10px;
+}
+
+textarea{
+    border-radius: 10px;
+    padding-top: 5px;
+    background-color: #333;
+    min-height: 100px;
+}
+
+.button{
+    border-radius: 100px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    width: 70%;
+    height: 40px;
+}

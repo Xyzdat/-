@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>Programm</title>
+    <script src="eel.js"></script>
+    <!--<link rel="stylesheet" href="../../NIRS/web/css/style.css">-->
+    <style>
+        body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #faf;
+    color: #fff;
+}
+
+.content{
+    margin-top: 100px;
+}
+
+input, textarea{
+    color: #fff;
+    border: none;
+    width: 90%;
+    height: 40px;
+    border-radius: 100px;
+    padding-left: 10px;
+    background-color: #333;
+    margin-bottom: 10px;
+}
+
+textarea{
+    border-radius: 10px;
+    padding-top: 5px;
+    background-color: #333;
+    min-height: 100px;
+}
+
+.button{
+    border-radius: 100px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    width: 70%;
+    height: 40px;
+}
+    </style>
+</head>
+<body >
+    <div align="center" class="content">
+        <h2>Telegram sendler</h2>
+        <input type="text" id="chat_id" placeholder="Chat_id"><br>
+        <textarea type="text" placeholder="Соообщение" id="message" ></textarea><br>
+        <button id="send_msg" class="button">Отправить Соообщение</button>
+        <p id="result"></p>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+    async function send_msg(){
+    let chat_id = document.getElementById('chat_id').value;
+    let msg = document.getElementById('message').value;
+
+    let result = await eel.send_message(chat_id,msg)();
+    document.getElementById('result').innerHTML = result;
+
+    document.getElementById('message').value = '';
+}
+
+
+$('#send_msg').click(function(){
+        send_msg();
+    });
+</script>
+</body>
+</html>
